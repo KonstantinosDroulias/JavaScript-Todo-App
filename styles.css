@@ -1,0 +1,229 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Limelight&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Press+Start+2P&family=Schoolbell&display=swap');
+
+
+*, html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Comfortaa', 'sans-serif';
+    line-height: 1.6;
+    font-size: 16px;
+    letter-spacing: 1px;
+
+    min-height: 100vh;
+    background-color: antiquewhite;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.app-container {
+    min-width: 600px;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0px 0px 20px 0px rgba(0,0,0,.15);
+    border-radius: 6px;
+}
+
+.heading-wrapper {
+    margin-bottom: 20px;
+}
+
+.main-heading {
+    font-size: 42px;
+    line-height: 1.2;
+    letter-spacing: 3px;
+}
+
+/* TODO LIST */
+
+.list-wrapper {
+    height: 500px;
+    overflow-y: scroll;
+    margin-bottom: 20px;
+}
+
+.todo-list {
+    list-style-type: circle;
+    padding: 20px;
+}
+
+.todo-items {
+    padding: 5px;
+    
+    border: none;
+    border-bottom: 1px #f7f7f7 solid;
+    border-top: 1px #f7f7f7 solid;
+    border-radius: 3px;
+
+    letter-spacing: 1.6px;
+
+    cursor: pointer;
+    transition: all .2s;
+}
+
+.todo-items:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 0px 10px -5px rgba(0, 0, 0, 0.1);
+    border-top: transparent;
+    border-bottom: rgba(0, 0, 255, 0.2) 1px solid;
+}
+
+.todo-items:active {
+    box-shadow: 0px 0px 0px 5px rgba(0, 0, 255, 0.2);
+}
+
+.content-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+}
+
+.buttons-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    flex-wrap: nowrap;
+}
+
+
+.item-btn {
+    display: none;
+
+    background-color: transparent;
+    border: none;
+    border-radius: 50px;
+    padding: 6px;
+
+    cursor: pointer;
+    transition: all .2s;
+}
+
+
+.todo-items:hover .item-btn {
+    display: block;
+}
+
+.todo-items:has(#complete-btn:hover) {
+    background-color: rgba(0, 200, 0, 0.2);
+    border-bottom: transparent;
+}
+
+.todo-items:active:has(#complete-btn:hover) {
+    box-shadow: 0px 0px 0px 5px rgba(0, 200, 0, 0.2);
+}
+
+
+.todo-items:has(#edit-btn:hover) {
+    background-color: rgba(0, 100, 255, 0.10);
+    border-bottom: transparent;
+}
+
+.todo-items:active:has(#edit-btn:hover) {
+    box-shadow: 0px 0px 0px 5px rgba(0, 100, 255, 0.1);
+}
+
+
+.todo-items:has(#remove-btn:hover) {
+    background-color: rgba(255, 0, 0, 0.2);
+    border-bottom: transparent;
+}
+
+.todo-items:active:has(#remove-btn:hover) {
+    box-shadow: 0px 0px 0px 5px rgba(255, 0, 0, 0.2);
+}
+
+/* INPUT */
+
+.input-notice {
+    position: absolute;
+    top: -140%;
+    font-size: 14px;
+    color: rgb(149, 68, 14);
+    border: #f7f7f7 solid 2px;
+
+    padding: 6px;
+    background-color: #fff;
+    border-radius: 6px;
+    box-shadow: 0px 10px 10px -10px rgba(0, 0, 0, .1);
+    white-space: nowrap;
+}
+
+.input-notice::before {
+    content: "";
+    position: absolute;
+    bottom: -12px; 
+    left: 10px; 
+    width: 18px;
+    height: 10px;
+    background-color: white;
+    border-left: 2px solid #f7f7f7;
+    border-right: 2px solid #f7f7f7;
+    border-top: 6px solid #fff;
+    box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, .5);
+    clip-path: polygon(50% 100%, 0 0, 100% 0);
+}
+
+.input-wrapper {
+    position: relative;
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    gap: 8px;
+}
+
+#todo-input {
+    flex-grow: 1;
+
+    font-family: 'Comfortaa', sans-serif;
+    line-height: 1.6;
+    font-size: 16px;
+    letter-spacing: 1px;
+    padding: 1px 5px;
+    border: none;
+    border-bottom: 1px solid black;
+}
+
+#add-btn {
+    font-family: 'Comfortaa', sans-serif;
+    font-size: 14px;
+    letter-spacing: 1px;
+    line-height: 1.3;
+    padding: 5px;
+    background-color: transparent;
+    box-shadow: 5px 5px 0px 2px black;
+
+
+    cursor: pointer;
+    transition: all .2s;
+}
+
+#add-btn:hover {
+    transform: translate(2px, 2px);
+    box-shadow: 3px 3px 0px 2px black;
+}
+
+#add-btn:active {
+    transform: translate(5px, 5px);
+    box-shadow: 0px 0px 0px 5px rgba(0,0,255,.55);
+}
+
+/* JavaScript added classes styling */
+
+.edit-input {
+    border: 1px solid rgba(0,0,255,.55);
+    border-radius: 3px;
+
+    font-family: 'Comfortaa', sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    padding: 4px;
+    letter-spacing: 1.5px;
+}

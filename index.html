@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="styles.css">
+
+    <title>Todo App</title>
+</head>
+<body>
+    <div class="app-container">
+    
+        <div class="heading-wrapper">
+            <h1 class="main-heading">Todo</h1>
+            <p class="quote">Test quote (use API)</p>    
+        </div>
+        
+        <div class="list-wrapper">
+            <ul class="todo-list">
+            </ul>    
+        </div>
+        
+        
+        <form class="input-wrapper">
+            <div style="display: none; cursor: pointer" class="input-notice" onclick="hideNotice()"></div>
+            <input type="text" id="todo-input" placeholder="Enter a task" />
+            <input type="button" id="add-btn"
+                onclick="newItem()"
+                value="Add Task"
+            />    
+        </form>
+        
+    </div>
+    
+    
+    <script type="text/javascript" src="script.js"></script>
+    <script src="https://kit.fontawesome.com/a8df326d4c.js" crossorigin="anonymous"></script>
+</body>
+</html>
